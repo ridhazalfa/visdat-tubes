@@ -6,7 +6,7 @@ from bokeh.io import curdoc # import curdoc
 
 # Memanggil fungsi Tab Korelasi dan Line 
 from Tab_Corr import Tab_Corellation 
-from Tab_Line import Tab_LinePlot 
+from line import Tab_LinePlot 
 
 path = r'./Saham Smartphone' # use your path
 all_files = glob.glob(os.path.join(path , "/*.csv"))
