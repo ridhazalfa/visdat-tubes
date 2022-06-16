@@ -94,7 +94,7 @@ date_range_slider = DateRangeSlider(value=(min(data['Date']), max(data['Date']))
                                     start=min(data['Date']), end=max(data['Date']))
 
 date_range_slider.js_link("value", fig_market.x_range, "start", attr_selector=0)
-date_range_slider.js_link("value", fig_market.x_frange, "end", attr_selector=1)
+date_range_slider.js_link("value", fig_market.x_range, "end", attr_selector=1)
 
 date_range_slider_1 = DateRangeSlider(value=(min(data['Date']), max(data['Date'])),
                                     start=min(data['Date']), end=max(data['Date']))
