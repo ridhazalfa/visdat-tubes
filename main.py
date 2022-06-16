@@ -8,7 +8,7 @@ from bokeh.io import curdoc # import curdoc
 from Tab_Corr import Tab_Corellation 
 from line import Tab_LinePlot 
 
-path = r'./Saham Smartphone' # use your path
+path = r'./Saham Smartphone/' # use your path
 all_files = glob.glob(os.path.join(path , "/*.csv"))
 
 li = []
