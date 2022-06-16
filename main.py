@@ -12,7 +12,7 @@ from bokeh.models.widgets.buttons import Dropdown
 
 output_notebook()
 
-data = pd.read_csv("smartphone.csv)
+data = pd.read_csv("smartphone.csv")
 # data
 
 data.rename(columns = {'Adj Close':'Adj_Close'}, inplace = True)
