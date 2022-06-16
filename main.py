@@ -5,7 +5,7 @@ from bokeh.models.widgets import Tabs # import Tabs digunakna untuk membuat tab 
 from bokeh.io import curdoc # import curdoc
 
 # Memanggil fungsi Tab Korelasi dan Line 
-from Tab_Corr import Tab_Corellation 
+from corr import Tab_Corellation 
 from line import Tab_LinePlot 
 
 path = r'./Saham Smartphone/' # use your path
