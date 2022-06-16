@@ -10,7 +10,9 @@ from bokeh.models.widgets import Tabs, Panel
 from bokeh.models.annotations import Title
 from bokeh.models.widgets.buttons import Dropdown
 
-data = pd.read_csv('smartphone.csv')
+output_notebook()
+
+data = pd.read_csv("smartphone.csv)
 # data
 
 data.rename(columns = {'Adj Close':'Adj_Close'}, inplace = True)
@@ -81,9 +83,9 @@ fig = figure(sizing_mode="fixed", plot_height=500,
 
 fig.add_tools(HoverTool(tooltips=tooltips, formatters={'@Date': 'datetime'}))
 
-fig.line(x='Date', y='Adj_Close', source=hang_seng_cds, legend_label='Samsung', color='yellow')
-fig.line(x='Date', y='Adj_Close', source=nasdaq_cds, legend_label='Vivo', color='green')
-fig.line(x='Date', y='Adj_Close', source=nikkei_cds, legend_label='Xiaomi', color='red')
+fig.line(x='Date', y='Adj_Close', source=samsung_cds, legend_label='Samsung', color='yellow')
+fig.line(x='Date', y='Adj_Close', source=vivo_cds, legend_label='Vivo', color='green')
+fig.line(x='Date', y='Adj_Close', source=xiaomi_cds, legend_label='Xiaomi', color='red')
 
 dropdown.js_on_change('value', callback_list_market)
 
@@ -92,7 +94,7 @@ date_range_slider = DateRangeSlider(value=(min(data['Date']), max(data['Date']))
                                     start=min(data['Date']), end=max(data['Date']))
 
 date_range_slider.js_link("value", fig_market.x_range, "start", attr_selector=0)
-date_range_slider.js_link("value", fig_market.x_range, "end", attr_selector=1)
+date_range_slider.js_link("value", fig_market.x_frange, "end", attr_selector=1)
 
 date_range_slider_1 = DateRangeSlider(value=(min(data['Date']), max(data['Date'])),
                                     start=min(data['Date']), end=max(data['Date']))
