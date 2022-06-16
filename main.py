@@ -27,14 +27,14 @@ data.tail()
 marketList = data['Name'].unique()
 
 #Melihat sebaran data
-data1 = data[data['Name'] == 'Samsung']
+data1 = data[data['Name'] == 'Pixel']
 data2 = data[data['Name'] == 'Vivo']
 data3 = data[data['Name'] == 'Xiaomi']
 
 # for i in [data1, data2, data3]:
 #    # print(i.shape)
 
-samsung_cds = ColumnDataSource(data1)
+pixel_cds = ColumnDataSource(data1)
 vivo_cds = ColumnDataSource(data2)
 xiaomi_cds = ColumnDataSource(data3)
 
@@ -53,7 +53,7 @@ tooltips= [
 fig_market.add_tools(HoverTool(tooltips=tooltips, formatters={'@Date': 'datetime'}))
 
 cols1 = data[['Date','Adj_Close','Name']]
-cols2 = cols1[cols1['Name'] == 'Samsung']
+cols2 = cols1[cols1['Name'] == 'Pixel']
 col1_cds = ColumnDataSource(data=cols1)
 col2_cds = ColumnDataSource(data=cols2)
 
@@ -70,7 +70,7 @@ callback_list_market = CustomJS(args=dict(source=col1_cds, sc=col2_cds), code=""
                                 }
                                 sc.change.emit();
                                 """)
-dropdown = Select(options=['Samsung', 'Vivo', 'Xiaomi'], value ='Samsung', title ='Stock Saham')   
+dropdown = Select(options=['Pixel', 'Vivo', 'Xiaomi'], value ='Pixel', title ='Stock Saham')   
 
 fig_market.line(x='Date', y='Adj_Close', source=col2_cds, color='green')
 
@@ -83,7 +83,7 @@ fig = figure(sizing_mode="fixed", plot_height=500,
 
 fig.add_tools(HoverTool(tooltips=tooltips, formatters={'@Date': 'datetime'}))
 
-fig.line(x='Date', y='Adj_Close', source=samsung_cds, legend_label='Samsung', color='yellow')
+fig.line(x='Date', y='Adj_Close', source=pixel_cds, legend_label='Pixel', color='yellow')
 fig.line(x='Date', y='Adj_Close', source=vivo_cds, legend_label='Vivo', color='green')
 fig.line(x='Date', y='Adj_Close', source=xiaomi_cds, legend_label='Xiaomi', color='red')
 
